@@ -67,7 +67,7 @@ func (ld LegoDeprecated) Present(_ context.Context, challenge acme.Challenge) er
 // If there is a way to do that with lego v3, then I don't know what it is.
 func (LegoDeprecated) Wait(ctx context.Context, challenge acme.Challenge) error {
 	select {
-	case <-time.After(60 * time.Second):
+	case <-time.After(180 * time.Second):
 	case <-ctx.Done():
 		return ctx.Err()
 	}
